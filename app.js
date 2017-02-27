@@ -3,6 +3,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 
+const applyMiddlewares = require('./middlewares/common');
 const api = require('./api/index');
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({
   extended: false,
 }));
 
+applyMiddlewares(app);
 app.use('/', api);
 
 // catch 404 and forward to error handler
