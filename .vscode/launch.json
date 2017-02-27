@@ -8,6 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Iniciar programa",
+      "envFile": "${workspaceRoot}/.env",
       "program": "${workspaceRoot}\\bin\\www",
       "cwd": "${workspaceRoot}"
     },
