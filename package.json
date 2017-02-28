@@ -25,7 +25,8 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "test": "./node_modules/.bin/mocha **/*.spec.js"
+    "test": "./node_modules/.bin/mocha **/*.spec.js",
+    "watch-test": "./node_modules/.bin/mocha **/*.spec.js --watch"
   },
   "repository": {
     "type": "git",
