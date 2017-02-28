@@ -27,8 +27,9 @@ function validatePayload(req, res, next) {
     const err = new Error('Required parameters missing!');
     err.status = 500;
     next(err);
+  } else {
+    next();
   }
-  next();
 }
 
 function validateToken(req, res, next) {
@@ -38,8 +39,9 @@ function validateToken(req, res, next) {
     const err = new Error('Token missing!');
     err.status = 500;
     next(err);
+  } else {
+    next();
   }
-  next();
 }
 
 function validateCommand(req, res, next) {
@@ -49,12 +51,20 @@ function validateCommand(req, res, next) {
     const err = new Error('Command missing!');
     err.status = 500;
     next(err);
+  } else {
+    next();
   }
-  next();
 }
 
-module.exports = (app) => {
+function apply(app) {
   app.use(validatePayload);
   app.use(validateToken);
   app.use(validateCommand);
 }
+
+module.exports = {
+  apply,
+  validatePayload,
+  validateToken,
+  validateCommand,
+};

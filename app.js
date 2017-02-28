@@ -3,7 +3,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 
-const applyMiddlewares = require('./middlewares/common');
+const applyMiddlewares = require('./middlewares/common').apply;
 const api = require('./api/index');
 
 const app = express();

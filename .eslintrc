@@ -3,5 +3,10 @@
   "rules": {
     "linebreak-style": "off",
     "func-names": ["error", "never"]
+  }, 
+  "globals": {
+    "describe": true,
+    "expect": true,
+    "it": true
   }
 }
