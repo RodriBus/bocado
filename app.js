@@ -16,7 +16,12 @@ app.use(bodyParser.urlencoded({
 }));
 
 applyMiddlewares(app);
-app.use('/', api);
+app.get('/', (req, res, next) => {
+  res.json({
+    version: '0.0.0',
+  });
+});
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
