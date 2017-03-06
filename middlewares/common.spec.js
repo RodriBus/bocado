@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-expressions, import/no-extraneous-dependencies */
-const app = require('../bin/www');
 const chai = require('chai');
 const spies = require('chai-spies');
 
