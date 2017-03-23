@@ -1,7 +1,7 @@
 require('dotenv-safe').load();
 const mongoose = require('mongoose');
 const debug = require('debug')('bocado:db');
-require('./models');
+const { Bocata, } = require('./models');
 
 const {
   DBUSER,
@@ -20,3 +20,21 @@ mongoose.connect(`mongodb://${DBUSER}:${DBPASSWORD}@${DBHOST}/${DBCOLLECTION}`).
   debug('Mongo db connection failed!', err);
 });
 
+
+
+function getAllBocatas() {
+  return new Promise((resolve, reject) => {
+    Bocata.find({}).sort('id').then(resolve).catch(reject);
+  });
+}
+
+function findBocataById(id) {
+  return new Promise((resolve, reject) => {
+    Bocata.find({ id }).then(resolve).catch(reject);
+  });
+}
+
+module.exports = {
+  getAllBocatas,
+  findBocataById,
+};
