@@ -16,7 +16,23 @@
       "request": "launch",
       "name": "Fichero actual",
       "program": "${file}",
-      "cwd": "${workspaceRoot}"
+      "cwd": "${workspaceRoot}",
+      "env": {
+        "DEBUG": "bocado:*"
+      }
+    },
+    {
+      "name": "mocha",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+      "stopOnEntry": false,
+      "args": ["**/*.spec.js", "--watch", "--colors"],
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": null,
+      "env": {
+        "NODE_ENV": "testing"
+      }
     },
     {
       "type": "node",
