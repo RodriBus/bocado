@@ -13,6 +13,13 @@
     },
     {
       "type": "node",
+      "request": "launch",
+      "name": "Fichero actual",
+      "program": "${file}",
+      "cwd": "${workspaceRoot}"
+    },
+    {
+      "type": "node",
       "request": "attach",
       "name": "Asociar al proceso",
       "port": 5858

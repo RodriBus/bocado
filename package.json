@@ -9,6 +9,7 @@
     "dotenv-safe": "^4.0.3",
     "express": "~4.14.1",
     "helmet": "^3.4.1",
+    "mongoose": "^4.9.1",
     "morgan": "~1.7.0"
   },
   "devDependencies": {

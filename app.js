@@ -2,6 +2,9 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
+const db = require('./db/db');
+
+db.connect();
 
 const applyMiddlewares = require('./middlewares/common').apply;
 const api = require('./api/index');
