@@ -10,6 +10,11 @@ const bocataSchema = new Schema({
   available: Boolean,
 });
 
-const Bocata = mongoose.model('Bocata', bocataSchema);
+let Bocata;
+if (mongoose.models.Bocata) {
+  Bocata = mongoose.model('Bocata');
+} else {
+  Bocata = mongoose.model('Bocata', bocataSchema);
+}
 
 module.exports = Bocata;

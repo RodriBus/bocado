@@ -1,7 +1,7 @@
 require('dotenv-safe').load();
 const mongoose = require('mongoose');
 const debug = require('debug')('bocado:db');
-const { Bocata, } = require('./models');
+const { Bocata } = require('./models');
 
 const {
   DBUSER,
